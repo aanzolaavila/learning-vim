@@ -662,14 +662,14 @@ Will remove the mapping that was assigned
 
 > **Important**: The `nmap` command is recursive. Meaning that it will call itself if it is calling the shortcut from the mapping definition.
 
-Recursive	Non-recursive	Unmap	   Modes
-============================================
-:map	    :noremap	    :unmap	   normal, visual, operator-pending
-:nmap	    :nnoremap	    :nunmap	   normal
-:xmap	    :xnoremap	    :xunmap	   visual
-:imap	    :inoremap	    :iunmap	   insert
-:cmap	    :cnoremap	    :cunmap	   command-line
-:omap	    :onoremap	    :ounmap	   operator-pending
+|Recursive	|Non-recursive	|Unmap	    |Modes      |
+|-----------|---------------|-----------|-----------|
+|:map	    |:noremap	    |:unmap	    |normal, visual, operator-pending|
+|:nmap	    |:nnoremap	    |:nunmap    |normal     |
+|:xmap	    |:xnoremap	    |:xunmap    |visual     |
+|:imap	    |:inoremap	    |:iunmap    |insert     |
+|:cmap	    |:cnoremap	    |:cunmap    |command-line|
+|:omap	    |:onoremap	    |:ounmap    |operator-pending|
 
 > If you want to preview your current mappings for Normal mode, just run `:nmap` command.
 > Example: `:nmap n`
