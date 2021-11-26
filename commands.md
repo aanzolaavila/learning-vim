@@ -619,16 +619,20 @@ Execute the macro in register `a` to the next 100 lines, if macro itself **doesn
 ## Run commands across selection
 Example:
 
+`
 my $a
 my $b
 my $c
+`
 
 > You can visually select all 3 lines using Shift-v and then run command:
 > `:normal A;` and it will yield
 
+`
 my $a;
 my $b;
 my $c;
+`
 
 ## The dot command in Visual mode
 The dot command can repeat the last executed command, it can be done also to execute in each line of the current selection
