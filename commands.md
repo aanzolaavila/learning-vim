@@ -1,59 +1,59 @@
 # Opening files
-:r file.txt
+`:r file.txt`
 Insert the file file.txt below the cursor in current buffer
 
-:0r file.txt
+`:0r file.txt`
 Insert the file file.txt before the first line
 
-:r!sed -n 2,8p file.txt
+`:r!sed -n 2,8p file.txt`
 Insert lines 2 to 8 from file file.txt below the cursor
 
-:r !ls
+`:r !ls`
 Insert a directory listing below the cursor
 
 ---
 
 # Closing files
-:x
+`:x`
 Exit Vim but write only when changes have been made
 
-ZZ
+`ZZ`
 Equivalent to :x. Notice there's no `:`. This is a key press.
 
-:qa
+`:qa`
 Exit all open files in current Vim session
 
 ---
 
 # Saving files
-:w! file.txt
+`:w! file.txt`
 Save file as file.txt with overwrite option
 
-:sav[!] file.txt
+`:sav[!] file.txt`
 Save current buffer as a new file file.txt [! forces write if it exists]
 
-:up[date] file.txt
+`:up[date] file.txt`
 Like :w but only save when the buffer has been modified
 
 ---
 
 # Navigation
-w
+`w`
 Go to the start of the next `word`
 
-W
+`W`
 Go to the start of the next `WORD`
 
-e
+`e`
 Go to the end of the current `word`
 
-E
+`E`
 Go to the end of the current `WORD`
 
-b
+`b`
 Go to the previous (before) `word`
 
-B
+`B`
 Go to the previous (before) `WORD`
 
 > `WORD` consists of a sequence of non-blank characters. It's always delimited by white space.
@@ -75,35 +75,35 @@ Ctrl-b
 Scroll down full page
 
 ## Jumping around the file
-gg
+`gg`
 Go to the top of the file
 
-G
+`G`
 Go to the bottom of the file
 
-{
+`{`
 Go to the beginning of current paragraph 
 
-}
+`}`
 Go to the end of current paragraph
 
-%
+`%`
 Go to the matching pair of (), [], {}
 
-50%
+`50%`
 Go to line at the 50% of the file
 
-:NUM
+`:NUM`
 Go to line NUM. :28 jumps to line 28 
 
 ## Navigating inside the window
-H
+`H`
 Move cursor to first (highest) line in current window
 
-L
+`L`
 Move cursor to lowest line in current window
 
-M
+`M`
 Move cursor to the middle of the current window
 
 > While in Insert mode, you can press Ctrl-o to get back to Normal mode and execute one command, after which you'll be automatically returned to Insert mode
@@ -130,43 +130,43 @@ Move cursor to the middle of the current window
 ---
 
 # File Manager (netrw) in Vim
-:Ex
+`:Ex`
 Open current directory in current Vim window (remember it as a shortcut for **Ex**plore)
 
-:Ex <dir>
+`:Ex <dir>`
 Open specified directory <dir>
 
-:Sex
+`:Sex`
 Open current directory in horizontal split window
 
-:Vex
+`:Vex`
 Open current directory in a new tab
 
-:Tex
+`:Tex`
 Open current directory in a new tab
 
-:Lexplore
+`:Lexplore`
 Open current directory in vertical split on the left. Default setting opens files in the window to the right of the netrw window
 
-:40vs +Ex
+`:40vs +Ex`
 Open current directory in vertical split window with width of 40 columns
 
 ## Changing how files are opened
 > You can perform some of the basic file manager operations using netrw:
 
-<Enter>
+`<Enter>`
 Opens the file under the cursor, or enters the directory under the cursor
 
-D
+`D`
 Deletes the file under the cursor. You can visually select multiple files and use this command to delete all of them
 
-R
+`R`
 Renames the file under the cursor
 
-X
+`X`
 Executes the file under the cursor
 
-%
+`%`
 Creates a new file in the current directory. Vim will ask you for a file name and open a buffer.
 
 ---
@@ -190,39 +190,39 @@ Creates a new file in the current directory. Vim will ask you for a file name an
 
 # Personalizing Vim
 > If you want to enable spell checking for default, you should :set spell
-> If you want multiple languages, you can :set spelllang=en,de,it
+> If you want multiple languages, you can `:set spelllang=en,de,it`
 
-nospell
+`:set nospell`
 Disable spelling
 
 ---
 
 # Undo and Redo
-u or :u
+`u or :u`
 Call undo command
 
-U
+`U`
 Undo all recent changes on the current line
 
 Ctrl-r or :red[o]
 Call the redo command
 
-:earlier 2d
+`:earlier 2d`
 Undo changes in last two days
 
-:ea 3h
+`:ea 3h`
 Undo changes in last three hours
 
-:ea 1m
+`:ea 1m`
 Undo changes in last one minute
 
-:later 5m
+`:later 5m`
 Redo all changes in last 5 minutes
 
-:lat 15s
+`:lat 15s`
 Redo all changes in last 15 seconds
 
-:earlier 3f
+`:earlier 3f`
 Undo last three file states (last three buffer writes)
 
 ## Undo branches
@@ -240,122 +240,122 @@ Undo last three file states (last three buffer writes)
 ## Vim Language Elements
 
 ### Verbs
-x
+`x`
 Delete character under the cursor to the right
 
-X
+`X`
 Delete character under the cursor to the left
 
-r
+`r`
 Replace character under the cursor with another character
 
-s
+`s`
 Delete character under the cursor and enter the Insert mode
 
-y
+`y`
 Yank (copy)
 
-c
+`c`
 Change
 
-d
+`d`
 Delete
 
-v
+`v`
 Visually select
 
 ### Modifiers
 > In Vim, modifiers are used right before nouns, so you can describe how you want to influence the nouns
 
-i
+`i`
 Inner (**i**nside)
 
-a
+`a`
 Around
 
-NUM
+`NUM`
 Number (e.g.: 1,2,10)
 
-t
+`t`
 Searches for something and stops before ir (search un**t**il)
 
-f
+`f`
 Searches for that thing and lands on it (**f**ind)
 
-/
+`/`
 Find a string (literal or regular expression)
 
 ### Nouns
 > In English, nouns can be objects you do something to. It's the same in Vim.
 
-w,W
+`w,W`
 Start of next word or WORD
 
-b,B
+`b,B`
 Start of previous word or WORD (start of word **b**efore)
 
-e,E
+`e,E`
 End of word or WORD
 
-s
+`s`
 Sentence
 
-p
+`p`
 Paragraph
 
-t
+`t`
 Tag (in context of HTML/XML)
 
-b
+`b`
 Block (in context of programming)
 
-h,j.k,l
+`h,j.k,l`
 Left, down, up, right
 
-$
+`$`
 End of line
 
-^,0
+`^,0`
 Start of line
 
 > These can be expanded and give you even more power
 
-aw
+`aw`
 **a** (complete) **w**ord
 
-as
+`as`
 **a** (complete) **s**entence 
 
-ap
+`ap`
 **a** (complete) **p**aragraph
 
-iw
+`iw`
 **I**nner **w**ord
 
-is
+`is`
 **I**nner **s**entence
 
-ip
+`ip`
 **I**nner **p**aragraph
 
 ### Learn to talk to Vim
 
-dw
+`dw`
 Delete word under cursor
 
-cis
+`cis`
 Change current sentence
 
-ci"
+`ci"`
 Change a string inside quotes
 
-c/hello
+`c/hello`
 Change until next occurrence of 'hello'
 
-ctY
+`ctY`
 Change everything from here to the letter Y (**c**hange un**t**il Y)
 
-vap
+`vap`
 Visually select this paragraph (**v**isual **a**round **p**aragraph)
 
 ## The "dot" command
@@ -369,16 +369,16 @@ Visually select this paragraph (**v**isual **a**round **p**aragraph)
 ## Ranges
 > For most Vim commands, the default range is the current line
 
-:s/bad/good/g
+`:s/bad/good/g`
 Changes all words `bad` to `good` in the current line
 
-:6,11s/bad/good/g
+`:6,11s/bad/good/g`
 Makes the same change, but in lines 6 to 11, including 6 and 11
 
-:%s/bad/good/g
+`:%s/bad/good/g`
 Makes the same change in entire file
 
-:'<,'>/helo/hello/g
+`:'<,'>/helo/hello/g`
 Replacement inside visual selection
 
 ## Search and replace
@@ -401,19 +401,19 @@ Substitution flags can be:
 > `|` is "logical OR"
 
 ## Search through multiple files
-:vimgrep warning \*.md
+`:vimgrep warning \*.md`
 Will search for the string `warning` in all markdown files in the current directory
 
-:cn
+`:cn`
 Jump to the next match
 
-:cN
+`:cN`
 Jump to the previous match
 
-:clist
+`:clist`
 View all the files that contain the matched string
 
-:cc number
+`:cc number`
 Jump to specific match number, which you get from :clist output
 
 > To search recursively you can do `:vimgrep error **/*.log`
@@ -421,7 +421,7 @@ Jump to specific match number, which you get from :clist output
 ## Match that string
 > If you want to highlight all matches of a string in your current buffer, you can use the `:match` command.
 
-:match ErrorMsg /Error/
+`:match ErrorMsg /Error/`
 Highlights all occurrences of string `Error` in a red color (depends on the color scheme)
 
 > Predefined colors you can use:
@@ -431,13 +431,13 @@ Highlights all occurrences of string `Error` in a red color (depends on the colo
 > - MoreMsg
 
 ## The power of the global command
-:[range]g/pattern/cmd
+`:[range]g/pattern/cmd`
 > `cmd` is the Ex command to be executed for each line matching the `pattern`
 
-:g/error/d
+`:g/error/d`
 Deletes all lines in a current file which contains the string `error`
 
-:g!/important/d
+`:g!/important/d`
 Deletes all lines BUT the ones with the string `important`
 
 `:g/^\s*$/d`
@@ -485,22 +485,22 @@ There are 9 types of registers
 
 # Buffers
 
-:ls
+`:ls`
 :buffers
 List the buffers
 
-:5b
+`:5b`
 :buffer 5
 Select buffer 5 (based on list from :ls)
 
-:ball
+`:ball`
 To open all of the buffers in windows
 
-:bd
+`:bd`
 Delete current buffer
 
-:bprevious 
-:bnext 
+`:bprevious `
+`:bnext `
 Iterate over each buffer
 
 ---
@@ -586,25 +586,25 @@ in
 no time
 
 ## More examples
-:6,16norm @v
+`:6,16norm @v`
 Execute the macro stored in register `v` on lines 6 through 16
 
-:10,$norm @i
+`:10,$norm @i`
 Execute the macro stored in register `i` on lines 10 through the end of the file
 
-:%norm @m
+`:%norm @m`
 Execute the macro stored in register `m` on all lines
 
-:g/pattern/norm @o
+`:g/pattern/norm @o`
 Execute the macro stored in register `o` on all lines matching pattern
 
 `:'<,'>norm @a`
 Execute the macro on visually selected lines
 
-100@a
+`100@a`
 Execute the macro in register `a` to the next 100 lines, if macro itself moves to the next line
 
-.,+99norm @a
+`.,+99norm @a`
 Execute the macro in register `a` to the next 100 lines, if macro itself **doesn't** move to the next line
 
 ---
@@ -654,10 +654,10 @@ e.g.
 
 # Mappings
 For normal mode:
-:nmap v :version<cr>
+`:nmap v :version<cr>`
 Will open version info every time you hit `v`
 
-:nunmap v
+`:nunmap v`
 Will remove the mapping that was assigned
 
 > **Important**: The `nmap` command is recursive. Meaning that it will call itself if it is calling the shortcut from the mapping definition.
