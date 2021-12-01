@@ -125,7 +125,7 @@ Move cursor to the middle of the current window
 > Once you're done with searching, you can hit Ctrl-o to jump back to your previous position (or Ctrl-i which will jump forwards)
 
 > To jump to the 5-th occurrence of a patten, simply type 5/pattern
-> 6\* will search for the 6th occurrence of the current word under the cursor
+> `6\*` will search for the 6th occurrence of the current word under the cursor
 
 ---
 
@@ -387,10 +387,10 @@ Replacement inside visual selection
 > Everything enclosed in [] is optional
 
 Substitution flags can be:
-- c: to **c**onfirm each substitution
-- g: to replace all occurrences in the line
-- i: ignore case for the pattern
-- I: don't ignore case for the pattern
+- `c`: to **c**onfirm each substitution
+- `g`: to replace all occurrences in the line
+- `i`: ignore case for the pattern
+- `I`: don't ignore case for the pattern
 
 ### Replace only the whole words
 > For a sentences such as `This sentence is short`, if we execute `:s/is/was/g` we would get `Thwas sentence was short`.
@@ -684,3 +684,22 @@ In order to disable a standard mapping, you need to map it to the special `<nop>
 ---
 
 # Folding
+Folding is collapsing multiple lines of text into a single line.
+
+> The hardest thing to remember is that every related to folds commands starts with `z`
+
+**TODO**
+
+---
+
+# Effective multiple file editing
+
+**TODO**
+
+---
+
+# Productivity tips
+
+**TODO**
+
+---
